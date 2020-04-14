@@ -1,0 +1,11 @@
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=root 
+-e MYSQL_DATABASE=fullstack 
+-e MYSQL_USER=test 
+-e MYSQL_PASSWORD=root 
+-d 
+-p 3306:3306 
+mysql:8.0.19
+
+
+docker container run -p 8080:8080 --link=mysql -e RDS_HOSTNAME=mysql 
+product-management-with-mysql
